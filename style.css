@@ -5,3 +5,16 @@ input {
   margin-top: 10px;
   float: left;
 }
+label {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: #333;
+  height: 20px;
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: right;
+  clear: both;
+  float:left;
+  margin-right:15px;
+}
