@@ -1,12 +1,22 @@
 function compute(){
-  const birthDate = document.getElementById('birthdate').value;
-  const gender = document.getElementById('gender').value;
-  const date = new Date(birthDate);
-  let day = getDay();
-  let month = getMonth();
-  let year = getYear();
-  let century = parseInt(year.substring(0,2));
-  year = parseInt(year);
+  let birthDate = document.getElementById('birthdate').value;
+  let gender = document.getElementById('gender').value;
+
+  let date = new Date(birthDate);
+
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear().toString().slice(-2);
+  
+  let century = parseInt(year.slice(0, 2));
+  let yr = parseInt(year);
+  let mth = month;
+  let dy = day;
+  //let day = getDay();
+  //let month = getMonth();
+  //let year = getYear();
+  //let century = parseInt(year.substring(0,2));
+  //year = parseInt(year);
 
   
   if (!isValidDate(birthDate)){
@@ -14,13 +24,13 @@ function compute(){
     return;
   }
 
-  //let dayOfTheWeek = (Math.floor((CC / 4) - 2 * CC - 1) + Math.floor((5 * YY / 4)) + Math.floor((26 * (MM + 1) / 10)) + DD) % 7;
-  let dayOfTheWeek = Math.round((((century/4)-2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
+  let dayOfTheWeek = (Math.floor((century / 4) - 2 * century - 1) + Math.floor((5 * yr / 4)) + Math.floor((26 * (mth + 1) / 10)) + dy) % 7;
+  //let dayOfTheWeek = Math.round((((century/4)-2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10)) + day) % 7);
   
   let akanName;
 
   if (gender === 'male') {
-    switch (dayOfWeek) {
+    switch (dayOfTheWeek) {
       case 0:
         akanName = "Kwasi";        
         break;
@@ -48,7 +58,7 @@ function compute(){
     }
     
   } else if (gender === 'female') {
-    switch(dayOfWeek) {
+    switch(dayOfTheWeek) {
       case 0:
         akanName = "Akosua";
         break;
@@ -74,5 +84,8 @@ function compute(){
     }
     
   }
+
+let resultDiv = document.getElementById('result');
+resultDiv.innerHTML = `Your Akan name is ${akanName}.`; 
  
 }
