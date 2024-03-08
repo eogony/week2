@@ -12,11 +12,7 @@ function compute(){
   let yr = parseInt(year);
   let mth = month;
   let dy = day;
-  //let day = getDay();
-  //let month = getMonth();
-  //let year = getYear();
-  //let century = parseInt(year.substring(0,2));
-  //year = parseInt(year);
+
 
   
   if (!isValidDate(birthDate)){
@@ -85,7 +81,7 @@ function compute(){
     
   }
 
-let resultDiv = document.getElementById('result');
-resultDiv.innerHTML = `Your Akan name is ${akanName}.`; 
+let outcome = document.getElementById('outcome');
+outcome.innerHTML = `Your Akan name is ${akanName}.`; 
  
 }
