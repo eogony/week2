@@ -5,7 +5,7 @@ input {
   margin-top: 10px;
   float: left;
 }
-label, select {
+label, select, button {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 18px;
   color: #333;
