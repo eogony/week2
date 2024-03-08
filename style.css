@@ -1,3 +1,5 @@
 input {
   margin-right: 10px;
+  float: right; 
+  width: 150px;
 }
